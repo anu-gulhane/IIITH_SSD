@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
+<style>
+    table, th, td {
+  border: 1px solid black;
+}
+</style>
+<body>
+    <script>
+        function add() {
+          var table = document.getElementById("myTable");
+          
+          var n = document.getElementById("myTable").rows.length;
+          var row = table.insertRow(n);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          cell1.innerHTML = document.getElementById("Roll No").value;
+          cell2.innerHTML =document.getElementById("Name").value;
+          document.getElementById("Roll No").value="";
+          document.getElementById("Name").value="";
+        }
+        function delet() {
+            
+          var n = document.getElementById("myTable").rows.length;
+            document.getElementById("myTable").deleteRow(n-1);
+        }
+        </script>
+    <div class="seconddiv">
+        <h1>Student Records</h1>
+        <input type="text" id="Roll No" name="Roll No" placeholder="Roll No"  >
+        <input type="text" id="Name" name="Name" placeholder="Name">
+       <button class="add" onclick="add()">Add New</button>
+       <table id="myTable">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+        </tr>
+        
+      </table>
+      <button class="delet" onclick="delet()">Delete Last Entry</button>
+    </div>
+</body>
+</html>
