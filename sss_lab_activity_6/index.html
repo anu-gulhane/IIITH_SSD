@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="myscripts.js"></script>
+    </head>
+    <body>
+        
+        <h1>Team Form</h1>
+        <form>
+            <label for="Mname">Manager name:</label>
+            <input type="text" id="Mname" name="Mname" required><br><br>
+            <label for="GroupEmail">Group Email:</label>
+            <input type="email" id="GroupEmail" name="GroupEmail" required><br><br>
+            <label for="SUsername">Server Username:</label>
+            <input type="text" id="SUsername" name="SUsername" pattern="[a-zA-Z0-9]+" required onkeyup="validate_name()">
+            <span id="wrong_name_alert"></span>
+            <br><br>
+            <label for="SPassword">Server Password:</label>
+            <input id="pass"
+				type="password"
+				name="pass"
+				placeholder="Enter Password"
+				required>
+            <br><br>
+            <label for="CPassword">Confirm Password:</label>
+            <input id="confirm_pass"
+				type="password"
+				name="confirm_pass"
+				placeholder="Confirm Password"
+				required
+				onkeyup="validate_password()">  
+            
+                <span id="wrong_pass_alert"></span>
+            <br><br>
+            <label for="Tlead">Team Lead:</label>
+            <select name="Tlead" id="Tlead">
+                <option value="Anuja">Anuja</option>
+                <option value="Divyani">Divyani</option>
+                <option value="Prashant">Prashant</option>
+                <option value="Bharati">Bharati</option>
+              </select><br><br>
+
+         <label for="Tmembers">Team Members:</label><br><br>
+            
+   <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <p ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget1">Krati</p>
+    <p ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget2">Prakhar</p>
+    <p ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget3">Akhilesh</p>
+    <p ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget4">Abhijeet</p>
+  </div>
+  
+  <div class="droptarget" id="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                     
+<button type="button" onclick="my_button_click_handler()">Submit</button>
+</form>     
+        
+    </body>
+</html>
